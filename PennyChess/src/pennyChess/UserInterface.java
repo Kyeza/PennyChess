@@ -1,0 +1,22 @@
+package pennyChess;
+
+import javafx.scene.Node;
+import javafx.scene.layout.Pane;
+
+public class UserInterface extends Pane {
+
+	public UserInterface() {
+		// TODO Auto-generated constructor stub
+		paintBoard();
+	}
+
+	public UserInterface(Node... arg0) {
+		super(arg0);
+		// TODO Auto-generated constructor stub
+	}
+	
+	protected void paintBoard() {
+		
+	}
+
+}
