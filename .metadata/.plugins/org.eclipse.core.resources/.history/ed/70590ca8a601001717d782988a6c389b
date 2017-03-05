@@ -1,0 +1,13 @@
+package pennyChess;
+
+public class Testing {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[][] numbers = new int[5][11];
+		
+		int len = numbers[0].length;
+		System.out.println(len);
+	}
+
+}

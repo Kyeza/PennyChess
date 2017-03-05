@@ -1,0 +1,27 @@
+package pennyChess;
+
+import javafx.scene.Node;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+
+public class UserInterface extends Pane {
+
+	public UserInterface() {
+		// TODO Auto-generated constructor stub
+		paintBoard();
+	}
+	
+	protected void paintBoard() {
+		BorderPane frame = new BorderPane();
+		frame.setStyle("-fx-background-color: red;");
+		
+		Rectangle rectangle = new Rectangle(10, 10, 20, 20);
+		rectangle.setFill(Color.BLUE);
+		frame.getChildren().add(rectangle);
+		
+		getChildren().add(frame);
+	}
+
+}

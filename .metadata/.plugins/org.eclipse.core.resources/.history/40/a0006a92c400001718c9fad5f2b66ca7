@@ -1,0 +1,23 @@
+package pennyChess;
+
+import javafx.scene.Node;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+
+public class UserInterface extends Pane {
+
+	public UserInterface() {
+		// TODO Auto-generated constructor stub
+		paintBoard();
+	}
+	
+	BorderPane frame;
+	
+	protected void paintBoard() {
+		frame = new BorderPane();
+		frame.setStyle("-fx-backgroud-color: brown;");
+		
+		getChildren().add(frame);
+	}
+
+}

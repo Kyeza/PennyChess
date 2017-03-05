@@ -1,0 +1,7 @@
+package pennyChess;
+
+import javafx.scene.layout.BorderPane;
+
+public class UserInterface extends BorderPane {
+
+}

@@ -1,0 +1,26 @@
+package pennyChess;
+
+import javafx.geometry.Insets;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+
+public class UserInterface extends BorderPane {
+	public UserInterface() {
+		// TODO Auto-generated constructor stub
+		super();
+		this.setStyle("-fx-background-color: #663300;");
+		paintBoard();
+	}
+	
+	protected void paintBoard() {
+		GridPane board = new GridPane();
+		this.setCenter(board);
+		this.setPadding(new Insets(20));
+		board.setStyle("-fx-background-color: white; "
+				+ "-fx-border-width: 5px; "
+				+ "-fx-border-style: groove; "
+				+ "-fx-border-color: #663300;");
+	}
+
+}

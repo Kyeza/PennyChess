@@ -1,0 +1,61 @@
+package pennyChess;
+
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.BorderStroke;
+import javafx.scene.layout.BorderStrokeStyle;
+import javafx.scene.layout.BorderWidths;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+
+public class UserInterface extends BorderPane {
+	private static Rectangle[][] square;
+	
+	public UserInterface() {
+		// TODO Auto-generated constructor stub
+		super();
+		this.setStyle("-fx-background-color: #663300;");
+		paintBoard();
+	}
+	
+	protected void paintBoard() {
+		GridPane board = new GridPane();
+		this.setCenter(board);
+		this.setPadding(new Insets(20));
+		board.setAlignment(Pos.CENTER);
+		board.setPadding(new Insets(0, 0, 0, 0));
+		board.setHgap(0);
+		board.setVgap(0);
+		board.setGridLinesVisible(true);
+		board.setStyle("-fx-background-color: white;");
+		board.setBorder(new Border(new BorderStroke(Color.DARKGREY, BorderStrokeStyle.SOLID, 
+				CornerRadii.EMPTY, new BorderWidths(5))));
+		
+		square = new Rectangle[8][8];
+		
+		for(int i = 0; i < square.length ; i++){
+			for(int j = 0; j < square[i].length; j++){
+				Rectangle sq = new Rectangle();
+				if (((i % 2 == 0) && (j % 2 == 0)) || ((i % 2 == 1) && (j % 2 == 1))) {
+					sq.setFill(Color.WHITE);
+				}else {
+					sq.setFill(Color.BLACK);
+				}
+				square[i][j] = sq;
+			}
+		}
+		
+		for(int i = 0; i < square.length ; i++){
+			for(int j = 0; j < square[i].length; j++){
+				board.add(square[i][j], j, i);
+			}
+		}
+		getChildren().add(board);
+	}
+
+}

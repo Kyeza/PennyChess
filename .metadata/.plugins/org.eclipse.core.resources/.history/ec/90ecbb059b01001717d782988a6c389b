@@ -1,0 +1,41 @@
+package pennyChess;
+
+import javafx.geometry.Insets;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.BorderStroke;
+import javafx.scene.layout.BorderStrokeStyle;
+import javafx.scene.layout.BorderWidths;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+
+public class UserInterface extends BorderPane {
+	
+	public UserInterface() {
+		// TODO Auto-generated constructor stub
+		super();
+		this.setStyle("-fx-background-color: #663300;");
+		paintBoard();
+	}
+	
+	protected void paintBoard() {
+		GridPane board = new GridPane();
+		this.setCenter(board);
+		this.setPadding(new Insets(20));
+		board.setStyle("-fx-background-color: white;");
+		board.setBorder(new Border(new BorderStroke(Color.DARKGREY, BorderStrokeStyle.SOLID, 
+				CornerRadii.EMPTY, new BorderWidths(5))));
+		
+		for(int i = 0; i < 8; i++){
+			for(int j = 0; j < 8; j++){
+				board.add(new Rectangle(), i, j);
+				
+			}
+		}
+		board.setGridLinesVisible(true);
+	}
+
+}
